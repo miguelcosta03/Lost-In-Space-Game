@@ -1,4 +1,5 @@
 from tkinter import *
+import string
 from random import choice
 
 win = Tk()
@@ -19,6 +20,7 @@ def start_click():
                 b_level_1.destroy()
                 b_level_2.destroy()
                 b_level_3.destroy()
+                lb_levels.destroy()
                 lp = ['space', 'ship', 'star']
 
                 random_password = choice(lp)
@@ -77,6 +79,7 @@ def start_click():
 
                 lb_attempt = Label(win, text='')
                 lb_attempt.place(x=350, y=350)
+
                 # --------------------------- END OF PASSWORD ATTEMPTS GUI ----------------------
 
                 # --------------------------- TIPS GUI -----------------------------
@@ -104,6 +107,7 @@ def start_click():
                 b_level_1.destroy()
                 b_level_2.destroy()
                 b_level_3.destroy()
+                lb_levels.destroy()
                 lp = ['meteorite', 'Milky Way']
 
                 random_password = choice(lp)
@@ -139,6 +143,7 @@ def start_click():
                     elif tip == tip_click and random_password == 'milky way':
                         lb_tip['text'] = "This password contains 8 letters. 4-Vowel and 4-Consonants. It has got a " \
                                          "drink name. "
+
                 # GUI for level 1
                 # --------------------------- PASSWORD ATTEMPTS GUI ---------------------------
                 password = Entry(win)
@@ -152,87 +157,7 @@ def start_click():
 
                 lb_attempt = Label(win, text='')
                 lb_attempt.place(x=350, y=350)
-                # --------------------------- END OF PASSWORD ATTEMPTS GUI ----------------------
 
-                # --------------------------- TIPS GUI -----------------------------
-                b_tip = Button(win, text='Click here for one password tip', command=tip_click)
-                b_tip.place(x=100, y=150)
-
-                lb_tip = Label(win, text='')
-                lb_tip.place(x=100, y=180)
-
-                # --------------------------- END OF TIPS GUI -----------------------
-
-                # --------------------------- POSSIBLE PASSWORDS GUI ---------------------------
-                b_possible_passwords = Button(win, text='Possible Passwords: ', command=possible_passwords_click)
-                b_possible_passwords.place(x=550, y=150)
-
-                lb_possible_passwords_list = Label(win, text='')
-                lb_possible_passwords_list.place(x=680, y=150)
-
-                # --------------------------- END OF POSSIBLE PASSWORDS GUI ---------------------
-        def level3_click():
-            level3 = level3_click
-            if level3 == level3_click:
-                b_level_1.destroy()
-                b_level_2.destroy()
-                b_level_3.destroy()
-                lp = ['astronaut', 'uranus', 'neptune']
-
-                random_password = choice(lp)
-
-                def try_password_click():
-                    try_password = try_password_click
-                    p = str(password.get())
-                    if try_password == try_password_click:
-                        c_random_password = [char for char in lp]
-                        password_string = ''.join(map(str, c_random_password))  # Convert the ll list to string
-                        if random_password == 'astronaut':
-                            if p == 'astronaut':
-                                lb_attempt['text'] = 'Password Succesfully Cracked!'
-                            else:
-                                lb_attempt['text'] = 'Password Not Cracked!'
-
-                        if random_password == 'uranus':
-                            if p == 'uranus':
-                                lb_attempt['text'] = 'Password Succesfully Cracked!'
-                            else:
-                                lb_attempt['text'] = 'Password Not Cracked!'
-
-                        if random_password == 'neptune':
-                            if p == 'neptune':
-                                lb_attempt['text'] = 'Password Succesfully Cracked!'
-                            else:
-                                lb_attempt['text'] = 'Password Not Cracked!'
-
-                def possible_passwords_click():
-                    possible_passwords = possible_passwords_click
-                    if possible_passwords == possible_passwords_click:
-                        lb_possible_passwords_list['text'] = 'astronaut \nuranus \nneptune'
-
-                def tip_click():
-                    tip = tip_click
-                    if tip == tip_click and random_password == 'astronaut':
-                        lb_tip[
-                            'text'] = "space suit hmm..."
-                    elif tip == tip_click and random_password == 'uranus':
-                        lb_tip['text'] = "Can be turned into something inappropriate"
-                    elif tip == tip_click and random_password == 'neptune':
-                        lb_tip['text'] = "Roman God of Oceans and Water"
-
-                # GUI for level 3
-                # --------------------------- PASSWORD ATTEMPTS GUI ---------------------------
-                password = Entry(win)
-                password.place(x=350, y=250)
-
-                lb_password_attempt = Label(win, text='Password Attempt: ')
-                lb_password_attempt.place(x=200, y=250)
-
-                b_try_password = Button(win, text='TRY', command=try_password_click)
-                b_try_password.place(x=500, y=250)
-
-                lb_attempt = Label(win, text='')
-                lb_attempt.place(x=350, y=350)
                 # --------------------------- END OF PASSWORD ATTEMPTS GUI ----------------------
 
                 # --------------------------- TIPS GUI -----------------------------
@@ -260,12 +185,25 @@ def start_click():
         b_level_2 = Button(win, text='Level 2', command=level2_click)
         b_level_2.place(x=400, y=150)
 
-        b_level_3 = Button(win, text='Level 3', command=level3_click)
+        b_level_3 = Button(win, text='Level 3')
         b_level_3.place(x=500, y=150)
+
+        lb_levels = Label(win, text='LEVELS')
+        lb_levels.place(x=400, y=100)
+
         # --------------------------- END OF LEVELS GUI --------------------
 
 
+def close_click():
+    close = close_click
+    if close == close_click:
+        win.destroy()
+
+
 # --------------------------- GENERAL GUI ---------------------------
+b_close = Button(win, text='Quit Game', command=close_click)
+b_close.place(x=700, y=550)
+
 b_start = Button(win, text='Start', command=start_click)
 b_start.place(x=380, y=250)
 
