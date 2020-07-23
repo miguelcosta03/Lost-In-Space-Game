@@ -98,16 +98,6 @@ def start_click():
 
                 # --------------------------- END OF POSSIBLE PASSWORDS GUI ---------------------
 
-        # --------------------------- LEVELS GUI ---------------------------
-        b_level_1 = Button(win, text='Level 1', command=level1_click)
-        b_level_1.place(x=300, y=150)
-
-        b_level_2 = Button(win, text='Level 2')
-        b_level_2.place(x=400, y=150)
-
-        b_level_3 = Button(win, text='Level 3')
-        b_level_3.place(x=500, y=150)
-
         # --------------------------- END OF LEVELS GUI --------------------
         def level2_click():
             level2 = level2_click
@@ -202,4 +192,3 @@ b_start.place(x=380, y=250)
 win.geometry('800x600')
 win.mainloop()
 # --------------------------- END OF GENERAL GUI ---------------------------
-
