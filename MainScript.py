@@ -1,6 +1,6 @@
 from tkinter import *
-import string
 from random import choice
+from pygame import mixer
 
 win = Tk()
 
@@ -13,6 +13,9 @@ def start_click():
     start = start_click
     if start == start_click:
         b_start.destroy()
+        mixer.init()
+        mixer.music.load('music.mp3')
+        mixer.music.play()
 
         def level1_click():
             level1 = level1_click
