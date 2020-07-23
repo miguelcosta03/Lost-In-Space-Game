@@ -20,6 +20,7 @@ def start_click():
                 b_level_1.destroy()
                 b_level_2.destroy()
                 b_level_3.destroy()
+                lb_levels.destroy()
                 lp = ['space', 'ship', 'star']
 
                 random_password = choice(lp)
@@ -105,6 +106,7 @@ def start_click():
                 b_level_1.destroy()
                 b_level_2.destroy()
                 b_level_3.destroy()
+                lb_levels.destroy()
                 lp = ['meteorite', 'Milky Way']
 
                 random_password = choice(lp)
@@ -153,6 +155,10 @@ def start_click():
 
                 lb_attempt = Label(win, text='')
                 lb_attempt.place(x=350, y=350)
+
+                b_back = Button(win, text='Back')
+                b_back.place(x=600, y=400)
+
                 # --------------------------- END OF PASSWORD ATTEMPTS GUI ----------------------
 
                 # --------------------------- TIPS GUI -----------------------------
@@ -177,11 +183,14 @@ def start_click():
         b_level_1 = Button(win, text='Level 1', command=level1_click)
         b_level_1.place(x=300, y=150)
 
-        b_level_2 = Button(win, text='Level 2')
+        b_level_2 = Button(win, text='Level 2', command=level2_click)
         b_level_2.place(x=400, y=150)
 
         b_level_3 = Button(win, text='Level 3')
         b_level_3.place(x=500, y=150)
+
+        lb_levels = Label(win, text='LEVELS')
+        lb_levels.place(x=400, y=100)
         # --------------------------- END OF LEVELS GUI --------------------
 
 
@@ -192,3 +201,4 @@ b_start.place(x=380, y=250)
 win.geometry('800x600')
 win.mainloop()
 # --------------------------- END OF GENERAL GUI ---------------------------
+
